@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Options">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Que desea realizar"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <CheckBox
+            android:id="@+id/chkAguinaldoProporcional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular aguinaldo Proporcional"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/chkOptionAguinaldo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular Aguinaldo"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/btnSeleccionar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="optionSeleccionado"
+            android:text="Seleccionar"
+            app:cornerRadius="10dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/btnSalirOption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Salir"
+            android:text="Salir"
+            app:cornerRadius="10dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
