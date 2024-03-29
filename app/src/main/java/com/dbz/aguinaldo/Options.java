@@ -24,7 +24,6 @@ public class Options extends AppCompatActivity {
 
     }
 
-
     public void optionSelection(View v) {
 
         if (!chkAguinaldo.isChecked() && !chkAguinaldoProportional.isChecked()) {
