@@ -30,7 +30,10 @@ public class DataAguinaldo extends AppCompatActivity {
         aniosLaborados = txtAniosLaborales.getText().toString();
 
         if (salarioMensual.isEmpty()) {
-            Toast.makeText(this, "Por favor ingrese su salario mensual!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor ingrese su salario mensual", Toast.LENGTH_SHORT).show();
+        } else if (aniosLaborados.isEmpty()) {
+            Toast.makeText(this, "Por favor ingrese los años laborados", Toast.LENGTH_SHORT).show();
+
         } else {
             Intent enviaraResult = new Intent(DataAguinaldo.this, result_aguinaldo.class);
             enviaraResult.putExtra("salario", salarioMensual);
@@ -42,11 +45,12 @@ public class DataAguinaldo extends AppCompatActivity {
         }
     }
 
-    public void irPantallaOpciones(View v){
+    public void irPantallaOpciones(View v) {
         Intent lanzar = new Intent(this, Options.class);
         startActivity(lanzar);
         finish();
     }
+
     public void salir(View v) {
         finish();
     }
