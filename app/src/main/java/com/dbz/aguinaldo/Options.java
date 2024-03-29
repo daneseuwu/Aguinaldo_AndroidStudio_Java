@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,8 +28,13 @@ public class Options extends AppCompatActivity {
 
     public void optionSeleccionado(View v) {
 
-        if (chkAguinaldoProporcional.isChecked()) {
+        if (!chkAguinaldo.isChecked() && !chkAguinaldoProporcional.isChecked()) {
+            Toast.makeText(this, "Selecciona una opcion", Toast.LENGTH_SHORT).show();
 
+        } else if (chkAguinaldo.isChecked() && chkAguinaldoProporcional.isChecked()) {
+            Toast.makeText(this, "Selecciona una opcion a la vez", Toast.LENGTH_SHORT).show();
+
+        } else if (chkAguinaldoProporcional.isChecked()) {
             Intent lanzar = new Intent(this, DataProporcional.class);
             startActivity(lanzar);
             finish();
@@ -43,7 +49,7 @@ public class Options extends AppCompatActivity {
     }
 
 
-    public void Salir(View v){
+    public void Salir(View v) {
         finish();
     }
 }
