@@ -23,16 +23,19 @@ public class DataProporcional extends AppCompatActivity {
         setContentView(R.layout.activity_data_proporcional);
 
         txtsalarioMensual = findViewById(R.id.txtEditSalarioMensual);
-        txtDiasLaborados= findViewById(R.id.txtEditDiasLaborados);
+        txtDiasLaborados = findViewById(R.id.txtEditDiasLaborados);
     }
 
-    public void calcularAguinaldo(View v){
+    public void calcularAguinaldo(View v) {
         salarioMensual = txtsalarioMensual.getText().toString();
-        diasLaborados= txtDiasLaborados.getText().toString();
+        diasLaborados = txtDiasLaborados.getText().toString();
 
         if (salarioMensual.isEmpty()) {
-            Toast.makeText(this, "Por favor ingrese su salario mensual!", Toast.LENGTH_SHORT).show();
-        } else {
+            Toast.makeText(this, "Por favor ingrese su salario mensual", Toast.LENGTH_SHORT).show();
+        } else if (diasLaborados.isEmpty()) {
+            Toast.makeText(this, "Por favor ingrese el numero de dias que ha laborado", Toast.LENGTH_SHORT).show();
+
+        } else{
             Intent enviaraResult = new Intent(DataProporcional.this, result_proporcional.class);
             enviaraResult.putExtra("salario", salarioMensual);
             enviaraResult.putExtra("diasLaborados", diasLaborados);
@@ -43,7 +46,7 @@ public class DataProporcional extends AppCompatActivity {
 
     }
 
-    public void irPantallaOpciones(View v){
+    public void irPantallaOpciones(View v) {
         Intent lanzar = new Intent(this, Options.class);
         startActivity(lanzar);
         finish();
