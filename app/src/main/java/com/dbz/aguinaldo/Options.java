@@ -11,8 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Options extends AppCompatActivity {
 
-    CheckBox chkAguinaldoProporcional, chkAguinaldo;
-    boolean option, proporcional, aguinaldo;
+    CheckBox chkAguinaldoProportional, chkAguinaldo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,21 +19,21 @@ public class Options extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_options);
 
-        chkAguinaldoProporcional = findViewById(R.id.chkAguinaldoProporcional);
+        chkAguinaldoProportional = findViewById(R.id.chkAguinaldoProporcional);
         chkAguinaldo = findViewById(R.id.chkOptionAguinaldo);
 
     }
 
 
-    public void optionSeleccionado(View v) {
+    public void optionSelection(View v) {
 
-        if (!chkAguinaldo.isChecked() && !chkAguinaldoProporcional.isChecked()) {
+        if (!chkAguinaldo.isChecked() && !chkAguinaldoProportional.isChecked()) {
             Toast.makeText(this, "Selecciona una opcion", Toast.LENGTH_SHORT).show();
 
-        } else if (chkAguinaldo.isChecked() && chkAguinaldoProporcional.isChecked()) {
+        } else if (chkAguinaldo.isChecked() && chkAguinaldoProportional.isChecked()) {
             Toast.makeText(this, "Selecciona una opcion a la vez", Toast.LENGTH_SHORT).show();
 
-        } else if (chkAguinaldoProporcional.isChecked()) {
+        } else if (chkAguinaldoProportional.isChecked()) {
             Intent lanzar = new Intent(this, DataProporcional.class);
             startActivity(lanzar);
             finish();
